@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+    <style>
+        body{
+            background-color: rgb(211, 231, 188);
+        }
+    </style>
+</head>
+<body>
+    <h1>Nacionalidade</h1>
+    
+    <fieldset>
+        <p>País de origem:</p>
+
+        <input type="radio" name="pais" value="br" id="br" class="country"> <label for="br">Brasil</label> <br>
+        <input type="radio" name="pais" value="pt" id="pt" class="country"> <label for="pt">Portugal</label> <br>
+        <input type="radio" name="pais" value="fr" id="fr" class="country"> <label for="fr">França</label> <br>
+        <input type="radio" name="pais" value="es" id="es" class="country"> <label for="es">Espanha</label> <br>
+    </fieldset>
+
+        <input type="button" value="Resultado" onclick="clicar()">
+        <div id="res"></div>
+
+    <script>
+        let nome = window.prompt ('Qual é seu nome?')
+        window.alert ('É um grande prazer em te conhecer,' + nome + '!')
+
+        function clicar() {
+            let pais = window.document.querySelector('.country:checked').value
+            let result = window.document.getElementById('res')
+
+            if(pais == 'br') {
+                result.innerHTML = '<p> ' + nome + ' Você é Brasileiro/a </p>'
+            } else {
+                result.innerHTML = '<p> ' + nome + ' Você é Estrangeiro/a </p>'
+            }
+        }
+    </script>
+
+</body>
+</html>
